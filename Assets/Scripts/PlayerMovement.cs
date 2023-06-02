@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;
+    public int currentHealth = 0;
     private float horizontal;
     public float speed = 8f;
     private float jumpingPower = 18f;
@@ -26,16 +26,22 @@ public bool IsGrounded()
     return Physics2D.OverlapCircle(groundCheck.transform.position, groundLayer);
 }
 
-private void OnCollisionEnter(Collision collision){
+private void OnCollisionEnter2D(Collision2D collision){
     if(collision.gameObject.tag == "cube" | collision.gameObject.tag == "Projectile"){
         gothurt();
+        TakeDamage(20);
     }
 }
+
+
+
 void TakeDamage(int damage){
+    Debug.Log("Called!");
     currentHealth -= damage;
 
     healthBar.SetHealth(currentHealth);
-}
+    }
+
 void gothurt()
 {
     var color = m_GotHitScreen.GetComponent<Image>().color;
@@ -46,9 +52,6 @@ void gothurt()
 
 void Update()
 {
-    if(Input.GetKeyDown(KeyCode.Space)){
-        TakeDamage(20);
-    }
     horizontal = Input.GetAxisRaw("Horizontal");
 
     if (Input.GetButtonDown("Jump") && IsGrounded())

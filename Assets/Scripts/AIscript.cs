@@ -60,7 +60,6 @@ public class AIscript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Projectile"){
         collisionCounter += 1;
-        Debug.Log("Collision");
         }
     }
 
