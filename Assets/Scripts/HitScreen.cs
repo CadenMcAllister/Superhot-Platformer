@@ -8,7 +8,7 @@ public class HitScreen : MonoBehaviour
 public GameObject m_GotHitScreen;
 
 private void OnCollisionEnter2D(Collision2D collision){
-    if(collision.gameObject.tag == "cube"){
+    if(collision.gameObject.tag == "cube" | collision.gameObject.tag == "Projectile"){
         gotHurt();
     }}
 

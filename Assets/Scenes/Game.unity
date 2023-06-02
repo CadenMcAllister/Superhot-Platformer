@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 73258648}
   m_Layer: 6
   m_Name: Platform2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 762260353}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -805,7 +805,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.40241992}
+  m_Offset: {x: 0, y: 0.007888198}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -816,7 +816,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.8048398}
+  m_Size: {x: 1, y: 1.0157764}
   m_EdgeRadius: 0
 --- !u!114 &762260350
 MonoBehaviour:
@@ -895,7 +895,7 @@ GameObject:
   - component: {fileID: 763257719}
   m_Layer: 6
   m_Name: Platform1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1344,7 +1344,7 @@ GameObject:
   - component: {fileID: 1145279957}
   m_Layer: 6
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1486,7 +1486,7 @@ GameObject:
   - component: {fileID: 1459935166}
   - component: {fileID: 1459935167}
   - component: {fileID: 1459935168}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Enemy
   m_TagString: cube
   m_Icon: {fileID: 0}
@@ -1579,7 +1579,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1459935167
@@ -1621,7 +1621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 762260344}
-  speed: 4
+  speed: 2
   jumpForce: 2
   groundLayer:
     serializedVersion: 2
@@ -1855,7 +1855,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -9999
   m_TargetDisplay: 0
 --- !u!224 &1550309705
 RectTransform:
@@ -1892,7 +1892,7 @@ GameObject:
   - component: {fileID: 1582635549}
   m_Layer: 6
   m_Name: Platform3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

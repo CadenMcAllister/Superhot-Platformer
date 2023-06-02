@@ -18,6 +18,7 @@ public class AIscript : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool canShoot = true;
+    private float collisionCounter = 0f;
 
     void Start()
     {
@@ -50,6 +51,13 @@ public class AIscript : MonoBehaviour
                 // Jump towards the player
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.layer == 0){
+        collisionCounter += 1;
+        Debug.Log("Collision");
         }
     }
 
