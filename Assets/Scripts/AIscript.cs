@@ -29,6 +29,9 @@ public class AIscript : MonoBehaviour
 
     void Update()
     {
+        if (collisionCounter > 5f){
+            Destroy(gameObject);
+        }
         // Move towards the player
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
 
@@ -55,7 +58,7 @@ public class AIscript : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.layer == 0){
+        if (collision.gameObject.tag == "Projectile"){
         collisionCounter += 1;
         Debug.Log("Collision");
         }

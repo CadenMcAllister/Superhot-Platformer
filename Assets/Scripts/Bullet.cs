@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
         
     }
 private void OnCollisionEnter2D(Collision2D collision){
-    if (collision.gameObject.tag == "cube" | collision.gameObject.tag == "Player" | collision.gameObject.tag == "Ground" ){
+    if (collision.gameObject.tag == "cube" | collision.gameObject.tag == "Player" | collision.gameObject.tag == "Ground" | collision.gameObject.tag == "Projectile"){
         Destroy(gameObject);
     }
 }
