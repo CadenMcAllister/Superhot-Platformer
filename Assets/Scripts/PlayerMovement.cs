@@ -4,25 +4,38 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
+    public int maxHealth = 100;
+    public int currentHealth;
     private float horizontal;
     public float speed = 8f;
     private float jumpingPower = 18f;
 
+    public HealthBar healthBar;
     public GameObject m_GotHitScreen;
     [SerializeField] private Rigidbody2D rb;
     public GameObject groundCheck;
     [SerializeField] private LayerMask groundLayer;
+void Start(){
+    currentHealth = maxHealth;
+    healthBar.SetMaxHealth(maxHealth);
+}
+
+
 public bool IsGrounded()
 {
     return Physics2D.OverlapCircle(groundCheck.transform.position, groundLayer);
 }
 
 private void OnCollisionEnter(Collision collision){
-    if(collision.gameObject.tag == "cube"){
+    if(collision.gameObject.tag == "cube" | collision.gameObject.tag == "Projectile"){
         gothurt();
     }
 }
+void TakeDamage(int damage){
+    currentHealth -= damage;
 
+    healthBar.SetHealth(currentHealth);
+}
 void gothurt()
 {
     var color = m_GotHitScreen.GetComponent<Image>().color;
@@ -33,6 +46,9 @@ void gothurt()
 
 void Update()
 {
+    if(Input.GetKeyDown(KeyCode.Space)){
+        TakeDamage(20);
+    }
     horizontal = Input.GetAxisRaw("Horizontal");
 
     if (Input.GetButtonDown("Jump") && IsGrounded())
