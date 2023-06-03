@@ -5,11 +5,12 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth = 0;
+    public int currentHealth = 100;
     private float horizontal;
     public float speed = 8f;
     private float jumpingPower = 18f;
 
+    public GameOver gameOver;
     public HealthBar healthBar;
     public GameObject m_GotHitScreen;
     [SerializeField] private Rigidbody2D rb;
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 void Start(){
     currentHealth = maxHealth;
     healthBar.SetMaxHealth(maxHealth);
+    gameOver = GameObject.Find("LogicManager").GetComponent<GameOver>();
 }
 
 
@@ -36,7 +38,6 @@ private void OnCollisionEnter2D(Collision2D collision){
 
 
 void TakeDamage(int damage){
-    Debug.Log("Called!");
     currentHealth -= damage;
 
     healthBar.SetHealth(currentHealth);
@@ -52,6 +53,9 @@ void gothurt()
 
 void Update()
 {
+    if (currentHealth == 0){
+        gameOver.GameOverScreen();
+    }
     horizontal = Input.GetAxisRaw("Horizontal");
 
     if (Input.GetButtonDown("Jump") && IsGrounded())
