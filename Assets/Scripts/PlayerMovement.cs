@@ -35,8 +35,6 @@ private void OnCollisionEnter2D(Collision2D collision){
     }
 }
 
-
-
 void TakeDamage(int damage){
     currentHealth -= damage;
 
@@ -72,4 +70,3 @@ void Update()
 
 }
 }
-

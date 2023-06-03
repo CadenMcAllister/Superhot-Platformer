@@ -9,6 +9,7 @@ TagManager:
   - cube
   - Ground
   - LogicManager
+  - Health Pack
   layers:
   - Default
   - TransparentFX
