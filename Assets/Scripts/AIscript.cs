@@ -11,6 +11,9 @@ public class AIscript : MonoBehaviour
     public float minPlayerY;
     public TimeSlow timeSlowScript;
 
+    public int maxHealth = 100;
+    public int currentHealth = 100;
+    public HealthBar healthBar;
     public GameObject projectilePrefab;
     public Transform bulletSpawnPoint;
     public float projectileForce = 500f;
@@ -21,12 +24,19 @@ public class AIscript : MonoBehaviour
     private float collisionCounter = 0f;
 
     void Start()
-    {
+    {   
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         GameObject player = GameObject.Find("Player");
         timeSlowScript = player.GetComponent<TimeSlow>();
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void TakeDamage(int damage){
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
+    }
     void Update()
     {
         if (collisionCounter > 5f){
@@ -60,6 +70,7 @@ public class AIscript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Projectile"){
         collisionCounter += 1;
+        TakeDamage(20);
         }
     }
 
