@@ -11,6 +11,7 @@ public class AIscript : MonoBehaviour
     public float minPlayerY;
     public TimeSlow timeSlowScript;
 
+    public bool Dead;
     public int maxHealth = 100;
     public int currentHealth = 100;
     public HealthBar healthBar;
@@ -37,10 +38,16 @@ public class AIscript : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
     }
+    void Dead1(){
+        Dead = true;
+        canShoot = false;
+        Destroy(gameObject);
+    }
     void Update()
     {
         if (collisionCounter > 5f){
-            Destroy(gameObject);
+            Dead = true;
+            Invoke("Dead1", 1);
         }
         // Move towards the player
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
