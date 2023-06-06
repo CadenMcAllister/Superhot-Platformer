@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - LogicManager
   - Health Pack
+  - Ground1
   layers:
   - Default
   - TransparentFX

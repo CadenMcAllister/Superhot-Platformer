@@ -10,6 +10,7 @@ public class AIscript : MonoBehaviour
     public LayerMask groundLayer;
     public float minPlayerY;
     public TimeSlow timeSlowScript;
+    public NewLevel newLevelScript;
 
     public bool Dead;
     public int maxHealth = 100;
@@ -31,6 +32,7 @@ public class AIscript : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         timeSlowScript = player.GetComponent<TimeSlow>();
         rb = GetComponent<Rigidbody2D>();
+        newLevelScript = GameObject.Find("LogicManager").GetComponent<NewLevel>();
     }
 
     void TakeDamage(int damage){
@@ -47,7 +49,8 @@ public class AIscript : MonoBehaviour
     {
         if (collisionCounter > 5f){
             Dead = true;
-            Invoke("Dead1", 1);
+            newLevelScript.NewLevel1();
+            Invoke("Dead1", 2);
         }
         // Move towards the player
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
