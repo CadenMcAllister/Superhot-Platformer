@@ -25,7 +25,6 @@ public class ProceduralGeneration : MonoBehaviour
         Instantiate(Platform, new Vector3(Random.Range(furtherstPoint, closestPoint), Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
         Instantiate(Platform, new Vector3(Random.Range(furtherstPoint, closestPoint), Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
         Instantiate(Platform, new Vector3(Random.Range(furtherstPoint, closestPoint), Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
-
     }
 
     void Update(){

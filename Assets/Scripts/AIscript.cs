@@ -41,10 +41,10 @@ public class AIscript : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
     void Dead1(){
-        Dead = true;
         canShoot = false;
         Destroy(gameObject);
     }
+
     void Update()
     {
         if (collisionCounter > 5f){
