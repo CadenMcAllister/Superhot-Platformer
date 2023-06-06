@@ -42,7 +42,7 @@ void Fire()
     Animator projectileAnimator = newProjectile.GetComponent<Animator>();
     projectileAnimator.Play("Waveform Animation");
 
-    Destroy(newProjectile, 5f);
+    Destroy(newProjectile, 2f);
 }
 
 
