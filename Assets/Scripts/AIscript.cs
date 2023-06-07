@@ -11,6 +11,7 @@ public class AIscript : MonoBehaviour
     public float minPlayerY;
     public TimeSlow timeSlowScript;
     public NewLevel newLevelScript;
+    public GameObject Enemy;
 
     public bool Dead;
     public int maxHealth = 100;
@@ -27,12 +28,12 @@ public class AIscript : MonoBehaviour
 
     void Start()
     {   
+        GameObject target = GameObject.Find("Player");
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         GameObject player = GameObject.Find("Player");
         timeSlowScript = player.GetComponent<TimeSlow>();
         rb = GetComponent<Rigidbody2D>();
-        newLevelScript = GameObject.Find("LogicManager").GetComponent<NewLevel>();
     }
 
     void TakeDamage(int damage){
@@ -42,7 +43,12 @@ public class AIscript : MonoBehaviour
     }
     void Dead1(){
         canShoot = false;
-        Destroy(gameObject);
+        Enemy.SetActive(false);
+        Invoke ("Destroy", 2);
+    }
+
+    void Destroy() {
+        Destroy (gameObject);
     }
 
     void Update()

@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
 void Start(){
     currentHealth = maxHealth;
     healthBar.SetMaxHealth(maxHealth);
-    gameOver = GameObject.Find("LogicManager").GetComponent<GameOver>();
 }
 
 

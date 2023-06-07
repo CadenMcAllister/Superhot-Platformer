@@ -9,19 +9,16 @@ public class Respawn : MonoBehaviour
     public bool Dead;
     GameObject EnemyClone;
 
-    // Start is called before the first frame update
-    public void Start()
-    {
-        EnemyClone = Instantiate(Enemy);
-        bool Dead = script.Dead;
-        
-        if (Dead){
-        Invoke("Respawn1", 2);
+    public void Update(){
+        if (EnemyClone == null){
+            Debug.LogError("EnemyClone is null");
         }
-
     }
 
-    void Respawn1(){
+    public void Respawn1(){
+    EnemyClone = Instantiate(Enemy);
+    Enemy = EnemyClone;
+    EnemyClone.SetActive(true);
     }
 
 }

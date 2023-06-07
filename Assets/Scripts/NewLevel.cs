@@ -18,10 +18,13 @@ public class NewLevel : MonoBehaviour
         bool Dead = script.Dead;
     }
 
+    public void Deactivate(){
+        newLevelScreen.SetActive(false);
+    }
 
     public void NewLevel1(){
-        Debug.Log("Called NewLevel1");
         newLevelScreen.SetActive(true);
+        Invoke("Deactivate", 5);
     }
 
 
