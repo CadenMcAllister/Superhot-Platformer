@@ -52,7 +52,6 @@ public class AIscript : MonoBehaviour
 
     void Destroy() {
         Destroy (gameObject);
-        movementScript.Destroy();
     }
 
     void Update()
@@ -122,7 +121,7 @@ public class AIscript : MonoBehaviour
                 gunAnimator.SetTrigger("Shoot");
             }
             Animator projectileAnimator = newProjectile.GetComponent<Animator>();
-            projectileAnimator.Play("Waveform Animation");
+            projectileAnimator.Play("Bolt Animation");
 
             // Set canShoot to false and start the cooldown timer
             canShoot = false;

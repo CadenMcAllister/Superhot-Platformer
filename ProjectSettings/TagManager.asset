@@ -11,6 +11,11 @@ TagManager:
   - LogicManager
   - Health Pack
   - Ground1
+  - Gun1
+  - Gun2
+  - Gun3
+  - Gun4
+  - Gun5
   layers:
   - Default
   - TransparentFX

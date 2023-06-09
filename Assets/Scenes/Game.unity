@@ -933,6 +933,10 @@ MonoBehaviour:
   script: {fileID: 1459935168}
   Enemy: {fileID: 1459935160}
   Dead: 0
+  movementScript: {fileID: 762260351}
+  Player: {fileID: 762260344}
+  buttonPressed: 0
+  TooSlow: {fileID: 251762694}
 --- !u!114 &526772164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,7 +1366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3476051577659577303, guid: 85fbce6158cd4b1459630e213ae5037f, type: 3}
       propertyPath: m_TagString
-      value: Projectile
+      value: Gun5
       objectReference: {fileID: 0}
     - target: {fileID: 3928431389099105606, guid: 85fbce6158cd4b1459630e213ae5037f, type: 3}
       propertyPath: m_RootOrder
@@ -2545,6 +2549,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 526772163}
+        m_TargetAssemblyTypeName: NewLevel, Assembly-CSharp
+        m_MethodName: Pressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1274732958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3033,7 +3049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3476051577659577303, guid: 85fbce6158cd4b1459630e213ae5037f, type: 3}
       propertyPath: m_TagString
-      value: Projectile
+      value: Gun4
       objectReference: {fileID: 0}
     - target: {fileID: 3928431389099105606, guid: 85fbce6158cd4b1459630e213ae5037f, type: 3}
       propertyPath: m_RootOrder
@@ -3576,7 +3592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3476051577659577303, guid: 85fbce6158cd4b1459630e213ae5037f, type: 3}
       propertyPath: m_TagString
-      value: Projectile
+      value: Gun3
       objectReference: {fileID: 0}
     - target: {fileID: 3928431389099105606, guid: 85fbce6158cd4b1459630e213ae5037f, type: 3}
       propertyPath: m_RootOrder
@@ -3727,7 +3743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8191875408969945204, guid: 3371650a65365024e813e8a5cae4a19f, type: 3}
       propertyPath: m_TagString
-      value: Projectile
+      value: Gun2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3371650a65365024e813e8a5cae4a19f, type: 3}
@@ -3744,7 +3760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262363271732761728, guid: e53fccccfb4c9714dbda46424179efda, type: 3}
       propertyPath: m_TagString
-      value: Projectile
+      value: Gun1
       objectReference: {fileID: 0}
     - target: {fileID: 6262363271732761730, guid: e53fccccfb4c9714dbda46424179efda, type: 3}
       propertyPath: player

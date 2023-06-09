@@ -40,7 +40,25 @@ void Fire()
     // Play the projectile animation
     gunAnimator.SetTrigger("Shoot");
     Animator projectileAnimator = newProjectile.GetComponent<Animator>();
-    projectileAnimator.Play("Waveform Animation");
+    if (currentGun.name == "laser_red" || currentGun.name == "Laser Pistol"){
+        projectileAnimator.Play("Bolt Animation");
+    }
+
+    else if (currentGun.name == "Blaster"){
+
+        projectileAnimator.Play("Waveform Animation");
+
+    }
+
+    else if (currentGun.name == "Rocket Launcher"){
+
+        projectileAnimator.Play("Charged Animation");
+
+    }
+
+    else if (currentGun.name == "MachineGun"){
+        projectileAnimator.Play("Pulse Animation");
+    }
 
     Destroy(newProjectile, 2f);
 }
