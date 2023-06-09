@@ -16,7 +16,7 @@ public class Respawn : MonoBehaviour
     }
 
     public void Respawn1(){
-    EnemyClone = Instantiate(Enemy);
+    EnemyClone = Instantiate(Enemy, new Vector3(0,0,0), Quaternion.identity);
     Enemy = EnemyClone;
     EnemyClone.SetActive(true);
     }

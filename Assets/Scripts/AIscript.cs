@@ -13,6 +13,8 @@ public class AIscript : MonoBehaviour
     public NewLevel newLevelScript;
     public GameObject Enemy;
 
+    public PlayerMovement movementScript;
+    public GameObject Player;
     public bool Dead;
     public int maxHealth = 100;
     public int currentHealth = 100;
@@ -28,6 +30,7 @@ public class AIscript : MonoBehaviour
 
     void Start()
     {   
+        movementScript = Player.GetComponent<PlayerMovement>();
         GameObject target = GameObject.Find("Player");
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -44,11 +47,12 @@ public class AIscript : MonoBehaviour
     void Dead1(){
         canShoot = false;
         Enemy.SetActive(false);
-        Invoke ("Destroy", 2);
+        Invoke ("Destroy", 5);
     }
 
     void Destroy() {
         Destroy (gameObject);
+        movementScript.Destroy();
     }
 
     void Update()

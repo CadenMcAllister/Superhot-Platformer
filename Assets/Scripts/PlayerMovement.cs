@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 8f;
     private float jumpingPower = 18f;
 
+    public GameObject TooSlow;
     public GameOver gameOver;
     public HealthBar healthBar;
     public GameObject m_GotHitScreen;
@@ -21,6 +22,10 @@ void Start(){
     healthBar.SetMaxHealth(maxHealth);
 }
 
+public void Destroy(){
+    TooSlow.SetActive(true);
+    Destroy(gameObject);
+}
 
 public bool IsGrounded()
 {
